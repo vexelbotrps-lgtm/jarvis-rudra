@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070c19">
+  <meta name="description" content="Meet JARVIS, a personal AI assistant for Windows. Download the portable build and get started in minutes.">
+  <title>JARVIS — Your desktop, reimagined</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root{--bg:#070c19;--panel:#0c1728;--ink:#e8f7ff;--muted:#95a9bf;--cyan:#75f7ed;--blue:#5f84ff;--line:rgba(149,206,238,.16)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:#75f7ed;color:#07121c}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 55% 35% at 50% -4%,#152e4d 0%,transparent 80%),linear-gradient(rgba(104,191,233,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(104,191,233,.024) 1px,transparent 1px);background-size:auto,52px 52px,52px 52px}
+    .wrap{max-width:1200px;margin:auto;padding:0 28px}.top{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font:700 19px 'Space Grotesk';letter-spacing:.17em}.brand-mark{width:32px;height:32px;border:1px solid var(--cyan);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 19px #75f7ed70;color:var(--cyan)}nav{display:flex;align-items:center;gap:30px;color:#bdd0df;font-size:14px}nav a:hover,.text-link:hover{color:var(--cyan)}.nav-cta{padding:10px 18px;border:1px solid #68ddd8;border-radius:8px;color:var(--cyan)}
+    .hero{position:relative;min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding-top:60px;padding-bottom:80px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);text-transform:uppercase;font:600 11px 'Space Grotesk';letter-spacing:.24em}.eyebrow:before{content:"";width:24px;height:1px;background:var(--cyan)}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'Space Grotesk',sans-serif}h1{font-size:clamp(56px,7vw,106px);line-height:.99;letter-spacing:-.07em;margin:27px 0}.gradient{background:linear-gradient(110deg,#fff 5%,#a3f5f5 55%,#7998ff);color:transparent;background-clip:text}.hero p{max-width:530px;color:var(--muted);font-size:18px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 24px;border-radius:9px;background:linear-gradient(110deg,#86fff0,#85b9ff);color:#06111e;font-weight:700;box-shadow:0 12px 34px #4ed6e42c;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 17px 38px #4ed6e450}.text-link{font-weight:700;color:#c5e5ee}.small{font-size:12px;color:#829bb2;margin-top:17px}.small span{margin:0 9px;color:#536a81}
+    .visual{position:relative;min-height:520px;display:grid;place-items:center;isolation:isolate}.visual:before{content:"";position:absolute;inset:7%;background:radial-gradient(circle,#0b7ea242,transparent 64%);filter:blur(27px);z-index:-1}.orbit{position:relative;width:min(34vw,390px);aspect-ratio:1;display:grid;place-items:center;border:1px solid #79eff75a;border-radius:50%;box-shadow:0 0 80px #4acbe21d,inset 0 0 55px #4acbe218}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.orbit:before{inset:22px;border:2px dashed #75f7ed55;animation:rotate 28s linear infinite}.orbit:after{inset:45px;border:2px solid transparent;border-top-color:#a5ffff;border-bottom-color:#578cff;animation:rotate 9s linear infinite reverse;box-shadow:0 0 35px #69d9ef36}.core{width:47%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 36% 29%,#f4ffff,#9af9f4 16%,#248dd1 46%,#0b276d 71%,#071528 88%);box-shadow:inset -18px -21px 29px #030819,0 0 30px #4de5f0,0 0 75px #299dc877;animation:breathe 4s ease-in-out infinite}.core:after{content:"";display:block;margin:15%;height:70%;border-radius:50%;border:1px solid #b6fcff7a}.hud-tag{position:absolute;padding:11px 14px;border:1px solid #76c9e942;background:#0a1729d9;backdrop-filter:blur(15px);border-radius:8px;color:#b8dce7;font:600 10px 'Space Grotesk';letter-spacing:.14em;box-shadow:0 12px 30px #0004}.hud-tag b{color:var(--cyan);font-weight:600}.tag-a{top:13%;left:0}.tag-b{right:0;bottom:20%}.tag-c{left:4%;bottom:11%}.visual-caption{position:absolute;bottom:0;color:#5d879e;font:600 10px 'Space Grotesk';letter-spacing:.27em}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}section{padding:100px 0}.section-head{max-width:680px;margin-bottom:40px}h2{font-size:clamp(37px,4.8vw,60px);line-height:1.06;letter-spacing:-.055em;margin:18px 0}section p{color:var(--muted)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{min-height:220px;padding:29px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#112338ae,#091321a6);transition:border-color .2s,transform .2s}.feature:hover{border-color:#70ebe680;transform:translateY(-4px)}.feature .icon{font-size:25px;color:var(--cyan);margin-bottom:26px}.feature h3{font-size:20px;letter-spacing:-.025em;margin-bottom:7px}.feature p{font-size:14px;margin:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0c1828}.step{padding:31px;min-height:250px}.step+.step{border-left:1px solid var(--line)}.num{color:var(--cyan);font:600 12px 'Space Grotesk';letter-spacing:.16em}.step h3{margin:33px 0 8px;font-size:20px}.step p{font-size:14px}.step code{display:inline-block;padding:6px 9px;border-radius:5px;background:#07101e;color:#aff9ea;white-space:normal;word-break:break-word;font-size:12px}
+    .download-card{position:relative;overflow:hidden;border:1px solid #61ddd666;border-radius:18px;padding:48px;background:radial-gradient(circle at 83% 50%,#1754766e,transparent 42%),linear-gradient(130deg,#10293a,#0a1628 70%);display:flex;align-items:center;justify-content:space-between;gap:30px}.download-card:after{content:"J";font:700 310px 'Space Grotesk';line-height:1;position:absolute;right:16%;top:-75px;color:#8fffff09;pointer-events:none}.download-card h2{margin:10px 0;font-size:clamp(33px,4vw,52px)}.download-card p{max-width:530px;margin:0}.download-card .btn{position:relative;z-index:1;white-space:nowrap}.fineprint{font-size:13px;margin-top:22px;color:#839ab0}.fineprint a{text-decoration:underline;text-underline-offset:3px}.fineprint a:hover{color:var(--cyan)}footer{border-top:1px solid var(--line);padding:35px 0 45px;color:#8da9bb}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px}.heart{color:#83f7e9;font-size:17px}.creator{font-weight:700;color:#e1f5f7}footer small{display:block;color:#6f8799;margin-top:7px}footer small a{text-decoration:underline}
+    @keyframes rotate{to{transform:rotate(360deg)}}@keyframes breathe{50%{transform:scale(1.06);filter:brightness(1.13)}}@media(max-width:800px){nav a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:72px}.visual{min-height:420px}.orbit{width:min(65vw,340px)}.features,.steps{grid-template-columns:1fr 1fr}.step+.step{border-left:0}.step{border-top:1px solid var(--line)}.step:first-child{border-top:0}.download-card{align-items:flex-start;flex-direction:column}}@media(max-width:550px){.wrap{padding:0 20px}.top{height:68px}.brand{font-size:16px}nav{gap:10px}.nav-cta{padding:7px 10px;font-size:12px}.hero{padding-bottom:50px}h1{font-size:59px}.hero p{font-size:16px}.visual{min-height:340px}.orbit{width:260px}.hud-tag{font-size:8px;padding:7px}.tag-a{left:-2%}.tag-b{right:-2%}.features,.steps{grid-template-columns:1fr}.feature{min-height:auto}.step{min-height:auto}.footer-inner{align-items:flex-start;flex-direction:column}section{padding:75px 0}.download-card{padding:29px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit:before,.orbit:after,.core{animation:none}.btn,.feature{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap top">
+    <a href="#top" class="brand" aria-label="JARVIS home"><span class="brand-mark">✦</span> JARVIS</a>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#setup">Get started</a><a class="nav-cta" href="#download">Download ↗</a></nav>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow">Personal intelligence / Windows</span>
+        <h1>Your world.<br><span class="gradient">At your word.</span></h1>
+        <p>Meet JARVIS: a voice powered desktop companion that helps you talk, explore, and get things done from one futuristic command center.</p>
+        <div class="actions"><a class="btn" href="#download">Get JARVIS for Windows <span aria-hidden="true">↓</span></a><a class="text-link" href="#setup">See how it works →</a></div>
+        <div class="small">Windows 10 / 11 <span>•</span> 64 bit <span>•</span> Portable ZIP</div>
+      </div>
+      <div class="visual" aria-label="Illustration of JARVIS's glowing interface" role="img">
+        <div class="orbit"><div class="core"></div></div>
+        <div class="hud-tag tag-a"><b>●</b> SYSTEM ONLINE</div><div class="hud-tag tag-b">◈ &nbsp; VOICE INTERFACE</div><div class="hud-tag tag-c">JARVIS / MARK LVI</div>
+        <div class="visual-caption">THE FUTURE IS LISTENING</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <section class="wrap" id="experience">
+      <div class="section-head"><span class="eyebrow">Meet your copilot</span><h2>One interface. More possibilities.</h2><p>Talk naturally, use the command field, or connect your phone as a microphone. JARVIS brings everyday actions into one desktop experience.</p></div>
+      <div class="features">
+        <article class="feature"><div class="icon">◎</div><h3>Talk to your desktop</h3><p>Ask questions and give commands through your microphone or the built in command field.</p></article>
+        <article class="feature"><div class="icon">⌁</div><h3>Make it yours</h3><p>Set up your own AI provider or supported local engine during first launch.</p></article>
+        <article class="feature"><div class="icon">▣</div><h3>Stay in the flow</h3><p>Use the activity log, system monitor, and on screen responses in the JARVIS window.</p></article>
+        <article class="feature"><div class="icon">◉</div><h3>Bring your phone</h3><p>Open Remote Control, scan its QR code with Android Chrome, and use your phone microphone.</p></article>
+        <article class="feature"><div class="icon">◇</div><h3>Explore and act</h3><p>Use optional browser, file, messaging, weather, and media actions when configured.</p></article>
+        <article class="feature"><div class="icon">↗</div><h3>Portable by design</h3><p>Unzip the complete folder and run the app. Python is not required on the destination PC.</p></article>
+      </div>
+    </section>
+    <div class="divider"></div>
+    <section class="wrap" id="setup">
+      <div class="section-head"><span class="eyebrow">Zero guesswork</span><h2>Up and running in three steps.</h2><p>Keep the downloaded files together. Your personal settings are created locally on first run.</p></div>
+      <div class="steps">
+        <article class="step"><span class="num">01 / DOWNLOAD</span><h3>Get the ZIP</h3><p>Download the Windows build below and extract the entire <code>JARVIS</code> folder somewhere you can write to, such as Documents or Downloads.</p></article>
+        <article class="step"><span class="num">02 / LAUNCH</span><h3>Open JARVIS</h3><p>Double click <code>JARVIS.exe</code> inside the extracted folder. Keep it with the other files; do not move the executable out on its own.</p></article>
+        <article class="step"><span class="num">03 / CONFIGURE</span><h3>Choose your AI</h3><p>Enter your own Gemini API key at first run, or configure a supported local engine in the app. Connect a microphone, then start talking or type a command.</p></article>
+      </div>
+    </section>
+    <section class="wrap" id="download">
+      <div class="download-card"><div><span class="eyebrow">Ready when you are</span><h2>Download JARVIS.</h2><p>The complete portable Windows build in one ZIP. Extract it, launch it, and make it yours.</p></div><a class="btn" href="https://github.com/vexelbotrps-lgtm/jarvis-rudra/releases/download/v1.0/JARVIS-Windows.zip" download>Download ZIP <span aria-hidden="true">↗</span></a></div>
+      <p class="fineprint">Need the full instructions? <a href="https://github.com/vexelbotrps-lgtm/jarvis-rudra#run-jarvis">Read the setup guide</a>. The build is for personal, noncommercial use.</p>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><div class="creator">Made with <span class="heart" aria-label="heart">♥</span> by Rudra</div><small>Based on JARVIS by <a href="https://github.com/FatihMakes">FatihMakes</a>. Licensed for personal and noncommercial use under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</small></div><a href="#top" class="text-link">Back to top ↑</a></div></footer>
+</body>
+</html>
